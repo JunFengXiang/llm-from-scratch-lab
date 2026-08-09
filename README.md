@@ -82,6 +82,27 @@ python -m llm_from_scratch_lab.train_toy \
 
 Windows PowerShell 可把上面命令写成一行。
 
+## 多设备维护
+
+本仓库按多设备工作流设计。每台设备分别克隆仓库、创建自己的 `.venv` 和 `artifacts/`；GitHub 只同步源码、配置、测试、笔记和轻量实验结论。
+
+开始工作前：
+
+```bash
+git pull --ff-only
+```
+
+离开当前设备前：
+
+```bash
+git status
+git add <本次修改的文件>
+git commit -m "feat(ch02): describe the change"
+git push -u origin HEAD
+```
+
+上面的 `git add` 是格式说明，请替换为实际文件路径，不要原样复制。两台设备需要同时工作时，应使用不同的任务分支，不要同时修改同一分支和同一文件。完整首次设置、切换设备、冲突处理及 checkpoint 迁移方法见 [多设备协作工作流](docs/MULTI_DEVICE_WORKFLOW.md)。
+
 ## 第一个工程门禁
 
 先尝试只拟合一个 batch：
