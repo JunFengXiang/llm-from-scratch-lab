@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "device": "auto",
+  "data": {
+    "num_samples": 1000,
+    "batch_size": 64,
+    "train_fraction": 0.8
+  },
+  "model": {
+    "input_dim": 2,
+    "hidden_dim": 32,
+    "num_classes": 2
+  },
+  "training": {
+    "epochs": 20,
+    "learning_rate": 0.01,
+    "weight_decay": 0.0001,
+    "grad_clip_norm": 1.0
+  },
+  "output_dir": "artifacts"
+}

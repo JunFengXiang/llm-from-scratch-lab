@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments and editors
+.venv/
+.env
+.DS_Store
+.idea/
+
+# Generated training artifacts
+artifacts/
+runs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+events.out.tfevents.*
+
+# Local data and copyrighted source material
+data/
+*.pdf
