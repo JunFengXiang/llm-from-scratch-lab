@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lab: debug toy training",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "llm_from_scratch_lab.train_toy",
+      "args": [
+        "--config",
+        "configs/toy_mlp.json",
+        "--run-name",
+        "debug_run",
+        "--overfit-one-batch"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    }
+  ]
+}

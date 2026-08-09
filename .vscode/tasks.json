@@ -1,0 +1,87 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Lab: install dependencies",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".[dev]"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab: train toy model",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-m",
+        "llm_from_scratch_lab.train_toy",
+        "--config",
+        "configs/toy_mlp.json",
+        "--run-name",
+        "vscode_run"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab: overfit one batch",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-m",
+        "llm_from_scratch_lab.train_toy",
+        "--config",
+        "configs/toy_mlp.json",
+        "--run-name",
+        "vscode_overfit",
+        "--overfit-one-batch"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab: run tests",
+      "type": "shell",
+      "command": "${command:python.interpreterPath}",
+      "args": [
+        "-m",
+        "pytest"
+      ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab: TensorBoard",
+      "type": "shell",
+      "command": "tensorboard",
+      "args": [
+        "--logdir",
+        "artifacts/runs"
+      ],
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
