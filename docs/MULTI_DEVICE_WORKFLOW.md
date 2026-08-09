@@ -96,12 +96,13 @@ git pull --ff-only
 
 ```bash
 git status
-git add src tests chapters configs docs experiments
+git add -A
+git status
 git commit -m "feat(ch02): implement tokenizer"
 git push -u origin HEAD
 ```
 
-工作尚未完成时可以提交一个临时同步点：
+第二次 `git status` 用来确认暂存区里只有当前任务的文件。工作尚未完成时可以提交一个临时同步点：
 
 ```bash
 git commit -m "wip(ch02): sync tokenizer progress"
