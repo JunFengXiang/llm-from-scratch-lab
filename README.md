@@ -96,12 +96,13 @@ git pull --ff-only
 
 ```bash
 git status
-git add <本次修改的文件>
+git add -A
+git status
 git commit -m "feat(ch02): describe the change"
 git push -u origin HEAD
 ```
 
-上面的 `git add` 是格式说明，请替换为实际文件路径，不要原样复制。两台设备需要同时工作时，应使用不同的任务分支，不要同时修改同一分支和同一文件。完整首次设置、切换设备、冲突处理及 checkpoint 迁移方法见 [多设备协作工作流](docs/MULTI_DEVICE_WORKFLOW.md)。
+第二次 `git status` 用来确认暂存区里只有当前任务的文件。两台设备需要同时工作时，应使用不同的任务分支，不要同时修改同一分支和同一文件。完整首次设置、切换设备、冲突处理及 checkpoint 迁移方法见 [多设备协作工作流](docs/MULTI_DEVICE_WORKFLOW.md)。
 
 ## 第一个工程门禁
 
