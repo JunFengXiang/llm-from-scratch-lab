@@ -66,7 +66,8 @@ def train_one_epoch(
         logits = model(inputs)
         loss = criterion(logits, targets)
         if not math.isfinite(loss.item()):
-            raise FloatingPointError(f"Non-finite loss detected at step {global_step}: {loss.item()}")
+            message = f"Non-finite loss detected at step {global_step}: {loss.item()}"
+            raise FloatingPointError(message)
         loss.backward()
         if grad_clip_norm is not None:
             nn.utils.clip_grad_norm_(model.parameters(), grad_clip_norm)
