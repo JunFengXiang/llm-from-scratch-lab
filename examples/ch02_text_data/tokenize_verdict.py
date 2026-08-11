@@ -1,5 +1,6 @@
 
 #完整版示例
+from simple_tokenizer import SimpleTokenizerV2
 from simple_tokenizer import SimpleTokenizerV1
 import re
 with open("data/ch02/the-verdict.txt","r",encoding = "utf-8") as f:
@@ -64,3 +65,13 @@ print(len(vocab.items()))#items是字典的属性 取出所有"词元,id组合"
 
 for i,item in enumerate(list(vocab.items())[-5:]):
     print(item)
+
+tokenizer_v2 = SimpleTokenizerV2(vocab)
+text1 = "Hello, do you like tea?"
+text2 = "In the sunlit terraces of the palace."
+text = " <|endoftext|> ".join((text1, text2))
+
+print(text)
+print(tokenizer_v2.encode(text))
+print(tokenizer_v2.decode(tokenizer_v2.encode(text)))
+
