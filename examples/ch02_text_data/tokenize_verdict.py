@@ -52,3 +52,19 @@ print(ids)
 #print(tokenizer.int_to_str[the_id])
 
 #print(tokenizer.encode("Hello, do you like tea?"))
+
+
+all_tokens = sorted(list(set(preprocessed)))
+all_tokens.extend([
+    "<|endoftext|>",
+    "<|unk|>",
+])
+vocab = {
+    token: integer
+    for integer,token in enumerate(all_tokens)
+}
+
+print(len(vocab.items()))#items是字典的属性 取出所有"词元,id组合"
+
+for i,item in enumerate(list(vocab.items())[-5:]):
+    print(item)
