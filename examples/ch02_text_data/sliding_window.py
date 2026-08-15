@@ -31,7 +31,7 @@ class GPTDatasetV1(Dataset):
 
         for i in range(0, len(token_ids) - max_length, stride):
             input_chunk = token_ids[i:i + max_length]
-            target_chunk = token_ids[i+1,i+ max_length+1]
+            target_chunk = token_ids[i+1:i+ max_length+1]
             self.input_ids.append(torch.tensor(input_chunk))
             self.target_ids.append(torch.tensor(target_chunk))
 
@@ -68,4 +68,31 @@ def create_dataloader_v1(
     return dataloader
 
 
-    
+dataloader = create_dataloader_v1(
+    raw_text,
+    batch_size = 1,
+    max_length = 4,
+    stride = 1,
+    shuffle=False
+)
+data_iter = iter(dataloader)
+first_batch = next(data_iter)
+second_batch = next(data_iter)
+
+print("first batch:",first_batch)
+print("second batch:",second_batch)
+print("input shape:",first_batch[0].shape)
+print("target shape:",first_batch[1].shape)
+
+dataloader = create_dataloader_v1(
+    raw_text,
+    batch_size = 8,
+    max_length = 4,
+    stride = 4,
+    shuffle = False
+)
+
+inputs,targets = next(iter(dataloader))
+
+print(inputs.shape)
+print(targets.shape)
