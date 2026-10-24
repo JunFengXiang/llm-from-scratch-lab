@@ -1,9 +1,10 @@
 
 #完整版示例
-from simple_tokenizer import SimpleTokenizerV2
-from simple_tokenizer import SimpleTokenizerV1
 import re
-with open("data/ch02/the-verdict.txt","r",encoding = "utf-8") as f:
+
+from simple_tokenizer import SimpleTokenizerV1, SimpleTokenizerV2
+
+with open("data/ch02/the-verdict.txt",encoding = "utf-8") as f:
     raw_text = f.read()
 
 preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)',raw_text)
@@ -63,7 +64,7 @@ vocab = {
 
 print(len(vocab.items()))#items是字典的属性 取出所有"词元,id组合"
 
-for i,item in enumerate(list(vocab.items())[-5:]):
+for _i,item in enumerate(list(vocab.items())[-5:]):
     print(item)
 
 tokenizer_v2 = SimpleTokenizerV2(vocab)

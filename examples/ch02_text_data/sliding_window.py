@@ -1,7 +1,8 @@
 import tiktoken
 import torch
+from torch.utils.data import DataLoader, Dataset
 
-from torch.utils.data import Dataset, DataLoader
+
 class GPTDatasetV1(Dataset):
     def __init__(self, txt, tokenizer, max_length, stride):
         self.input_ids = []
@@ -49,7 +50,7 @@ def create_dataloader_v1(
 
 if __name__ == "__main__":
 
-    with open("data/ch02/the-verdict.txt","r", encoding = "utf-8") as f:
+    with open("data/ch02/the-verdict.txt", encoding = "utf-8") as f:
         raw_text = f.read()
 
     tokenizer = tiktoken.get_encoding("gpt2")
