@@ -1,4 +1,5 @@
 import torch
+
 input_ids = torch.tensor([2,3,5,1])
 
 vocab_size = 6

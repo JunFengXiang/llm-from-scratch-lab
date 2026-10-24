@@ -1,7 +1,7 @@
 import torch
 from sliding_window import create_dataloader_v1
 
-with open("data/ch02/the-verdict.txt","r",encoding = "utf-8") as f:
+with open("data/ch02/the-verdict.txt",encoding = "utf-8") as f:
     raw_text = f.read()
 
 max_length = 4
