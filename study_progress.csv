@@ -1,0 +1,2 @@
+date,calendar_day,task_id,materials_status,user_submission_status,execution_status,understanding_status,observed_code_sha,evidence,material_path,blocker,next_step
+2026-10-28,2,PY01-list-summary,prepared,pending,pending,pending,21bf35ab723e14b8c4b2923f3b6c266e3bc02eaf,"my_python_study当前仅可见早期语法代码；10月27日讨论过平均数筛选与返回字典；尚无本题完整代码和实际输出",chapters/00_training_basics/PY01-list-summary.md,"本地进度不可见；不推断未学习","提交同题函数与三个用例输出及简短解释"
